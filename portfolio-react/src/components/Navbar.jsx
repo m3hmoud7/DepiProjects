@@ -8,13 +8,15 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [mobileMenuOPen, setMobileMenuOpen] = useState(false);
+  const [mobileMenueOpen, setMobileMenueOpen] = useState(false);
+
   return (
     <nav className="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-50">
       <div className="app-container flex justify-between items-center h-16">
-        {/* Logo */}
+        {/* logo */}
         <span className="gradient-text text-2xl font-bold">AI Revolution</span>
-        {/* Desktop Links */}
+
+        {/* desktop links */}
         <div className="hidden md:flex items-center space-x-8">
           {links.map((link) => (
             <a key={link.name} className="nav-item" href={link.href}>
@@ -25,10 +27,11 @@ export default function Navbar() {
             Get Started
           </a>
         </div>
-        {/* Mobile Menu Button */}
+
+        {/* Mobile menu button */}
         <button
-          onClick={() => setMobileMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+          onClick={() => setMobileMenueOpen((prev) => !prev)}
+          className="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 foucs:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,10 +49,10 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
-      {/* Mobile Menu */}
-      {mobileMenuOPen && (
+
+      {/* mobile menu */}
+      {mobileMenueOpen && (
         <div className="md:hidden bg-white shadow-lg rounded-b-lg px-2 pt-2 pb-3 space-y-1">
-          {" "}
           {links.map((link) => (
             <a key={link.name} className="mobile-nav-item" href={link.href}>
               {link.name}
